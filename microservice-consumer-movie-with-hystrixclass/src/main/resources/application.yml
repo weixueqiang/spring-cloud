@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: microservice-consumer-movie
+server:
+  port: 7904
+eureka:
+  client:
+
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka
+  instance:
+    prefer-ip-address: true
+#解决:Load balancer does not have available server for client 的问题        
+feign: 
+  hystrix:
+    enabled: true   

@@ -1,0 +1,18 @@
+server:
+  port: 7900
+spring:
+  application:
+    name: microservice-provider-user
+logging:
+  level:
+    root: INFO
+    com.itmuch: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    
+  
